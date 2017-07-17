@@ -1,0 +1,44 @@
+<h1>All Files</h1>
+<p> 
+	<%= link_to new_user_profile_doc_path, class: "btn btn-info btn-sm" do %>
+	<i class="glyphicon glyphicon-plus"></i>Upload Files
+	<% end %>
+</p>
+
+<% if user_profile_docs_path(@docs).length == 0 %>
+<p> No Files Found </p>
+
+<% else %>
+<table class='table table-bordered'>
+	<% @docs.each do |doc| %>
+	<tr>
+		<td>
+		<%= doc.filename %>
+		</td>
+		<td>
+		<%= doc.description %>
+		</td>
+		<td>
+		<%= link_to 'Edit', edit_user_profile_doc_path(@user_profile,doc) %>
+		</td>
+		<td>
+		<%= link_to 'Delete', [@user_profile,doc] , method: :delete, data:{confirm:'Are you sure'} %>
+		</td>
+		<td>
+		<%= link_to 'Download', docs_download_path(@user_profile,doc) %>
+		</td>
+	</tr>
+<% end %>
+</table>
+<% end %>
+
+
+		<%= link_to root_path, class: "btn btn-info btn-sm" do %>
+	<i class="glyphicon glyphicon-plus"></i>Log Out
+	<% end %>
+
+
+
+
+
+

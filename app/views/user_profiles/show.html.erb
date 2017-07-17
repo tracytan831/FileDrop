@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @user_profile.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user_profile.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user_profile.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user_profile.password %>
+</p>
+
+<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
+<%= link_to 'Files', user_profile_docs_path(@user_profile)%> |
+<%= link_to 'Log Out', user_profiles_path %>
